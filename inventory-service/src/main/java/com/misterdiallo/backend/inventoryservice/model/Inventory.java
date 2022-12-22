@@ -1,5 +1,4 @@
-package com.misterdiallo.backend.orderservice.model;
-
+package com.misterdiallo.backend.inventoryservice.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,20 +6,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
-@Table(name = "t_orders")
+@Table(name = "t_inventory")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class Order {
+@NoArgsConstructor
+public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String skuCode;
+    private Integer quantity;
 
-    private String orderNumber;
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<OrderLineItems> orderLineItemsList;
+
 }

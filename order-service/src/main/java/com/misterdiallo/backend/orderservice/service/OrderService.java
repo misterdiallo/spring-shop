@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-//@Transactional
+@Transactional
 public class OrderService {
 
     private final OrderRepository orderRepository;
